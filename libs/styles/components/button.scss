@@ -1,0 +1,162 @@
+$css-prefix-button: $css-prefix+'button';
+
+@keyframes rotating {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@mixin textBorderColor($color, $border) {
+  @include _color($color);
+  border: 1px solid $border;
+}
+
+@mixin baseColor($color, $border, $bg) {
+  @include textBorderColor($color, $border);
+  @include _background($bg);
+}
+
+@mixin size($size, $height) {
+  &-size-#{$size} {
+    height: $height;
+
+    &.#{$css-prefix-button}-round {
+      border-radius: $height/2;
+    }
+  }
+}
+
+@mixin waterColor($bg) {
+  &.#{$css-prefix-button}-round:after {
+    @include _background($bg);
+  }
+
+  &.#{$css-prefix-button}-circle:after {
+    @include _background($bg);
+  }
+}
+
+@mixin type($type, $color, $borderColor, $bg, $hover, $focus) {
+  &-type-#{$type} {
+    @include baseColor($color, $borderColor, $bg);
+
+    &:hover {
+      @include _background($hover);
+      @include _borderColor($hover);
+    }
+
+    &:focus {
+      @include _background($focus);
+    }
+
+    @include waterColor($bg);
+  }
+}
+
+@mixin waterShadow($radius) {
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    pointer-events: none;
+    border-radius: $radius;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    opacity: 0;
+    transition: all 0.3s;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active:after {
+    opacity: 0.3;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: 0s;
+  }
+}
+
+.#{$css-prefix-button} {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: 400;
+  text-align: center;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  user-select: none;
+  padding: 5px 15px 5px;
+  font-size: 12px;
+  line-height: 1;
+  border-radius: 4px;
+  transition: color .2s linear, background-color .2s linear, border .2s linear, box-shadow .2s linear;
+  @include _background($white);
+  box-sizing: border-box;
+  position: relative;
+
+  & span {
+    vertical-align: middle;
+  }
+
+  //禁用
+  &-disabled {
+    cursor: not-allowed;
+    opacity: 0.3;
+  }
+
+  //圆角
+  &-round {
+    @include waterShadow(20px);
+  }
+
+  //圆形 
+  &-circle {
+    min-width: 50px;
+    min-height: 50px;
+    border-radius: 55%;
+    @include waterShadow(55%);
+  }
+
+  &-type-default {
+    @include baseColor($Content, $Border, $white);
+
+    &:hover {
+      @include textBorderColor($LightPrimary, $LightPrimary);
+    }
+
+    &:focus {
+      @include textBorderColor($Primary, $Primary);
+    }
+
+    @include waterColor($Sub);
+  }
+
+  .icon-loading:before {
+    vertical-align: middle;
+    animation: rotating 5s linear infinite;
+    display: inline-block;
+  }
+
+  @include size(default, 32px);
+  @include size(small, 24px);
+  @include size(large, 40px);
+
+  @include type('primary', $white, $Primary, $Primary, $LightPrimary, $DarkPrimary);
+  @include type('success', $white, $Success, $Success, lighten($Success, 10%), darken($Success, 10%));
+  @include type('warning', $white, $Warning, $Warning, lighten($Warning, 10%), darken($Warning, 10%));
+  @include type('error', $white, $Error, $Error, lighten($Error, 10%), darken($Error, 10%));
+}

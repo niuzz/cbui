@@ -7,11 +7,11 @@
 <div class="example">
     <div class="example-box">
         <div>
-            <b-button>默认按钮</b-button>
-            <b-button type="primary">主要按钮</b-button>
-            <b-button type="success">成功按钮</b-button>
-            <b-button type="warning">警告按钮</b-button>
-            <b-button type="error">危险按钮</b-button>
+            <n-button>默认按钮</n-button>
+            <n-button type="primary">主要按钮</n-button>
+            <n-button type="success">成功按钮</n-button>
+            <n-button type="warning">警告按钮</n-button>
+            <n-button type="error">危险按钮</n-button>
         </div>
     </div>
 </div>
@@ -19,11 +19,11 @@
 :::code
 ```html
     <div>
-        <b-button>默认按钮</b-button>
-        <b-button type="primary">主要按钮</b-button>
-        <b-button type="success">成功按钮</b-button>
-        <b-button type="warning">警告按钮</b-button>
-        <b-button type="error">危险按钮</b-button>
+        <n-button>默认按钮</n-button>
+        <n-button type="primary">主要按钮</n-button>
+        <n-button type="success">成功按钮</n-button>
+        <n-button type="warning">警告按钮</n-button>
+        <n-button type="error">危险按钮</n-button>
     </div>
 ```
 :::
@@ -36,9 +36,9 @@ Button 组件可以在不同场景下选择合适的按钮尺寸。
 <div class="example">
     <div class="example-box">
         <div>
-         <b-button size="small">主要按钮</b-button>
-         <b-button size="default">主要按钮</b-button>
-         <b-button size="large">主要按钮</b-button>
+         <n-button size="small">主要按钮</n-button>
+         <n-button size="default">主要按钮</n-button>
+         <n-button size="large">主要按钮</n-button>
         </div>
     </div>
 </div>
@@ -46,9 +46,9 @@ Button 组件可以在不同场景下选择合适的按钮尺寸。
 ::: code
 ```html
     <div>
-        <b-button size="small">危险按钮</b-button>
-        <b-button size="default">危险按钮</b-button>
-        <b-button size="large">危险按钮</b-button>
+        <n-button size="small">危险按钮</n-button>
+        <n-button size="default">危险按钮</n-button>
+        <n-button size="large">危险按钮</n-button>
     </div>
 ```
 :::
@@ -60,11 +60,11 @@ Button 组件可以在不同场景下选择是否可以点击。
 <div class="example">
     <div class="example-box">
         <div>
-            <b-button :round="true">默认按钮</b-button>
-            <b-button type="primary" :round="true">主要按钮</b-button>
-            <b-button type="success" :round="true">成功按钮</b-button>
-            <b-button type="warning" :round="true">警告按钮</b-button>
-            <b-button type="error" :round="true">危险按钮</b-button>
+            <n-button :round="true">默认按钮</n-button>
+            <n-button type="primary" :round="true">主要按钮</n-button>
+            <n-button type="success" :round="true">成功按钮</n-button>
+            <n-button type="warning" :round="true">警告按钮</n-button>
+            <n-button type="error" :round="true">危险按钮</n-button>
         </div>
     </div>
 </div>
@@ -72,11 +72,11 @@ Button 组件可以在不同场景下选择是否可以点击。
 ::: code
 ```html
     <div>
-        <b-button :round="true">默认按钮</b-button>
-        <b-button type="primary" :round="true">主要按钮</b-button>
-        <b-button type="success" :round="true">成功按钮</b-button>
-        <b-button type="warning" :round="true">警告按钮</b-button>
-        <b-button type="error" :round="true">危险按钮</b-button>
+        <n-button :round="true">默认按钮</n-button>
+        <n-button type="primary" :round="true">主要按钮</n-button>
+        <n-button type="success" :round="true">成功按钮</n-button>
+        <n-button type="warning" :round="true">警告按钮</n-button>
+        <n-button type="error" :round="true">危险按钮</n-button>
     </div>
 ```
 :::
@@ -89,11 +89,11 @@ Button 组件可以在不同场景下选择是否可以点击。
 <div class="example">
     <div class="example-box">
         <div>
-            <b-button  disabled="disabled">默认按钮</b-button>
-            <b-button type="primary" disabled="disabled">主要按钮</b-button>
-            <b-button type="success" disabled="disabled">成功按钮</b-button>
-            <b-button type="warning" disabled="disabled">警告按钮</b-button>
-            <b-button type="error"   disabled="disabled">危险按钮</b-button>
+            <n-button  disabled="disabled">默认按钮</n-button>
+            <n-button type="primary" disabled="disabled">主要按钮</n-button>
+            <n-button type="success" disabled="disabled">成功按钮</n-button>
+            <n-button type="warning" disabled="disabled">警告按钮</n-button>
+            <n-button type="error"   disabled="disabled">危险按钮</n-button>
         </div>
     </div>
 </div>
@@ -101,11 +101,11 @@ Button 组件可以在不同场景下选择是否可以点击。
 ::: code
 ```html
     <div>
-        <b-button  disabled="disabled">默认按钮</b-button>
-        <b-button type="primary"  disabled="disabled">主要按钮</b-button>
-        <b-button type="success"  disabled="disabled">成功按钮</b-button>
-        <b-button type="warning" disabled="disabled">警告按钮</b-button>
-        <b-button type="error"   disabled="disabled">危险按钮</b-button>
+        <n-button  disabled="disabled">默认按钮</n-button>
+        <n-button type="primary"  disabled="disabled">主要按钮</n-button>
+        <n-button type="success"  disabled="disabled">成功按钮</n-button>
+        <n-button type="warning" disabled="disabled">警告按钮</n-button>
+        <n-button type="error"   disabled="disabled">危险按钮</n-button>
     </div>
 ```
 :::
@@ -118,11 +118,11 @@ Button 组件可以在不同场景下选择是否可以点击。
 <div class="example">
     <div class="example-box">
         <div>
-            <b-button  :circle="true"></b-button>
-            <b-button type="primary" :circle="true"></b-button>
-            <b-button type="success" :circle="true"></b-button>
-            <b-button type="warning" :circle="true"></b-button>
-            <b-button type="error"   :circle="true"></b-button>
+            <n-button  :circle="true"></n-button>
+            <n-button type="primary" :circle="true"></n-button>
+            <n-button type="success" :circle="true"></n-button>
+            <n-button type="warning" :circle="true"></n-button>
+            <n-button type="error"   :circle="true"></n-button>
         </div>
     </div>
 </div>
@@ -130,11 +130,11 @@ Button 组件可以在不同场景下选择是否可以点击。
 ::: code
 ```html
     <div>
-        <b-button :circle="true"></b-button>
-        <b-button type="primary" :circle="true"></b-button>
-        <b-button type="success" :circle="true"></b-button>
-        <b-button type="warning" :circle="true"></b-button>
-        <b-button type="error"   :circle="true"></b-button>
+        <n-button :circle="true"></n-button>
+        <n-button type="primary" :circle="true"></n-button>
+        <n-button type="success" :circle="true"></n-button>
+        <n-button type="warning" :circle="true"></n-button>
+        <n-button type="error"   :circle="true"></n-button>
     </div>
 ```
 :::
@@ -142,16 +142,16 @@ Button 组件可以在不同场景下选择是否可以点击。
 ### 图标按钮
 Button 组件可以在不同场景下选择是否可以点击。
 使用```icon``` 属性来定义Button图标样式。
-更多图标参考百望[Icon组件](http://localhost:8080/#/icon)
+更多图标参考星拥月[Icon组件](http://localhost:3000/#/icon)
 
 <div class="example">
     <div class="example-box">
         <div>
-            <b-button icon="dayin">default</b-button>
-            <b-button type="primary" icon="dayin">primary</b-button>
-            <b-button type="success" icon="dayin">success</b-button>
-            <b-button type="warning" icon="dayin">warning</b-button>
-            <b-button type="error"   icon="dayin">error</b-button>
+            <n-button icon="dayin">default</n-button>
+            <n-button type="primary" icon="dayin">primary</n-button>
+            <n-button type="success" icon="dayin">success</n-button>
+            <n-button type="warning" icon="dayin">warning</n-button>
+            <n-button type="error"   icon="dayin">error</n-button>
         </div>
     </div>
 </div>
@@ -159,11 +159,11 @@ Button 组件可以在不同场景下选择是否可以点击。
 ::: code
 ```html
     <div>
-        <b-button icon="daochukehuxinxi">default</b-button>
-        <b-button type="primary" icon="fapiaoshengcheng">primary</b-button>
-        <b-button type="success" icon="pipeixinxi">success</b-button>
-        <b-button type="warning" icon="qianshouxinxi">warning</b-button>
-        <b-button type="error"   icon="chuangjianyonghu">error</b-button>
+        <n-button icon="daochukehuxinxi">default</n-button>
+        <n-button type="primary" icon="fapiaoshengcheng">primary</n-button>
+        <n-button type="success" icon="pipeixinxi">success</n-button>
+        <n-button type="warning" icon="qianshouxinxi">warning</n-button>
+        <n-button type="error"   icon="chuangjianyonghu">error</n-button>
     </div>
 ```
 :::
@@ -176,7 +176,7 @@ Button 组件可以在不同场景下选择是否可以点击。
 <div class="example">
     <div class="example-box">
         <div>
-            <b-button  type="primary" :loading="true">加载中</b-button>
+            <n-button  type="primary" :loading="true">加载中</n-button>
         </div>
     </div>
 </div>
@@ -184,7 +184,7 @@ Button 组件可以在不同场景下选择是否可以点击。
 ::: code
 ```html
     <div>
-        <b-button type="primary" :loading="true">加载中</b-button>
+        <n-button type="primary" :loading="true">加载中</n-button>
     </div>
 ```
 :::
@@ -195,7 +195,7 @@ Button 支持click 事件
 <div class="example">
     <div class="example-box">
         <div>
-            <b-button  @on-click="handleClick">点击事件</b-button>
+            <n-button  @on-click="handleClick">点击事件</n-button>
         </div>
     </div>
 </div>
@@ -204,7 +204,7 @@ Button 支持click 事件
     export default {
         methods: {
             handleClick(event) {
-                alert('点击事件！来自百望Button组件')
+                alert('点击事件！来自星拥月Button组件')
             }
         }
     }
@@ -213,7 +213,7 @@ Button 支持click 事件
 ::: code
 ```html
    <div>
-       <b-button  @on-click="handleClick">点击事件</b-button>
+       <n-button  @on-click="handleClick">点击事件</n-button>
    </div>
    <script>
        export default {

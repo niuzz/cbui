@@ -4,9 +4,6 @@
     <div class="content clearfix" ref="content">
       <menu-nav class="nav"></menu-nav>
       <div class="nav-right" v-if="anchors.length">
-       <b-anchor affix show-ink>
-          <b-anchor-link v-for="(item, index) in anchors" :key="index" :href="'#title' + index" :title="item.innerText"></b-anchor-link>
-        </b-anchor>
       </div>
       <router-view class="doc"/>
     </div>
