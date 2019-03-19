@@ -1,7 +1,6 @@
 /**
  * vue-cli3的全局配置文件 详情见https://cli.vuejs.org/zh/config/#%E5%85%A8%E5%B1%80-cli-%E9%85%8D%E7%BD%AE
- * Created by gaoguoqing on 2019/1/28.
- *
+ * 
  */
 const isProduction = process.env.NODE_ENV === 'production'
 const path = require('path')

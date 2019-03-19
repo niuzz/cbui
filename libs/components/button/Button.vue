@@ -1,13 +1,4 @@
-/**
-* Created by 李佳航 on 2018/11/2.
-*
-*/
-/*
-* @Author: lijiahang
-* @Date: 2018-11-14 15:32:43
-* @Last Modified by:   lijiahang
-* @Last Modified time: 2018-11-14 15:32:43
-*/
+
 <template>
     <button ref="button"
             :disabled="disabled"
