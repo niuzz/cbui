@@ -1,0 +1,24 @@
+@import "../mixin/common";
+// 全局颜色表
+// 主色调
+$LightPrimary: #52b7fc; // hover
+$Primary: #0079CC; // main
+$DarkPrimary: #00558f; // active
+$white: #fff; // active
+// 辅助色
+$Info: #0079CC; // info
+$Success: #1fca74; // success
+$Warning: #ff8f00; // warning
+$Error: #f44336; // error
+$Badge: #ff5722; // badge
+// 中性色
+$Background: #f8f8f9; // background
+$Sub: #80848f; // sub
+$Disabled: #e8e8e8; // disabled
+$Border: #dddee1; // border
+$Divider: #e9eaec; // divider
+$Title: #1c2438; // title
+$Content: #495060; // content
+$SubContent: #9ea7b4; // subContent
+$DisContent: #bbbbbb; //  disContent
+$LinkContent: #0079cc; // linkContent

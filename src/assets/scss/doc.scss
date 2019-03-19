@@ -1,0 +1,157 @@
+// 示例文档样式
+@import '../../../libs/styles/common/color';
+
+.doc {
+  .b-table {
+    margin-bottom: 10px;
+  }
+  img {
+    max-width: 1000px;
+  }
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, SimSun, sans-serif;
+  .code-show {
+    @include _background($Divider);
+    margin: 0 4px;
+    display: inline-block;
+    padding: 1px 5px;
+    font-size: 12px;
+    border-radius: 3px;
+    height: 18px;
+    line-height: 18px;
+  }
+  h1 {
+    font-weight: 400;
+    @include _color($Title);
+    font-size: 26px;
+  }
+  h3 {
+    font-weight: 400;
+    @include _color($Title);
+    font-size: 22px;
+    margin: 25px 0 15px;
+  }
+  h4 {
+    font-weight: 400;
+    color: $Title;
+    font-size: 18px;
+    margin: 10px 0 15px;
+  }
+  h3 + p {
+    font-size: 14px;
+    @include _color($Content);
+    line-height: 1.5em;
+    margin-bottom: 10px;
+  }
+  .table {
+    width: 100%;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 45px;
+    border-collapse: collapse;
+    @include _color($Content);
+    th {
+      padding: 8px 10px;
+      text-align: left;
+      font-weight: 400;
+      @include _background($Background);
+      border: 1px solid $Border;
+    }
+    td {
+      padding: 8px;
+      border: 1px solid $Border;
+    }
+    .code-show {
+      margin-bottom: 5px;
+    }
+  }
+  //兼容 makedown
+  ul {
+    padding-left: 40px;
+  }
+  ul, ol {
+    list-style-type: circle;
+  }
+  a {
+    color: $Primary;
+  }
+  .language-bash {
+    @include _background($Background);
+  }
+  .icon-list {
+    overflow: hidden;
+    max-width: 1000px;
+    li {
+      float: left;
+      width: 220px;
+      height: 120px;
+      text-align: center;
+      list-style: none;
+    }
+    .icon {
+      line-height: 50px;
+      margin: 5px 0;
+    }
+  }
+}
+
+.example {
+  border: 1px solid $Border;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  position: relative;
+  transition: all .2s ease-in-out;
+  .example-box {
+
+    margin: 10px;
+    .example-box-row-interval {
+      .b-col {
+        background: white;
+        padding: 0;
+        div {
+          padding: 10px 0;
+        }
+      }
+      .b-col:nth-child(odd) {
+        div {
+          @include _background($Primary);
+        }
+      }
+      .b-col:nth-child(even) {
+        div {
+          @include _background($LightPrimary);
+        }
+      }
+    }
+
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  ul, ol {
+    list-style-type: none;
+  }
+  .b-row {
+    padding-bottom: 10px;
+  }
+  .b-col {
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+  }
+  .b-col:nth-child(odd) {
+    @include _background($Primary);
+  }
+  .b-col:nth-child(even) {
+    @include _background($LightPrimary);
+  }
+  td.test-table-columns {
+    background: cornflowerblue;
+  }
+  .test-table-cell {
+    background: red;
+  }
+  .test-table-row td {
+    background: greenyellow;
+  }
+}

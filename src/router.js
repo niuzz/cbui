@@ -1,23 +1,26 @@
-import Vue from 'vue';
-import Router from 'vue-router';
-import Home from './views/Home.vue';
+import Vue from 'vue'
+import Router from 'vue-router'
+import menuList from './json/menu.json'
 
-Vue.use(Router);
+Vue.use(Router)
 
+let routes = []
+
+Object.keys(menuList).forEach((item) => {
+    routes = routes.concat(menuList[item])
+})
+const addRoute = (router) => {
+    router.forEach((route) => {
+        if (route.items) {
+            addRoute(route.items)
+            routes = routes.concat(route.items)
+        } else {
+            route.component = r => require.ensure([], () =>
+                r(require(`./documents/basicDocuments/${route.name}.md`)))
+        }
+    })
+}
+addRoute(routes)
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: Home,
-    },
-    {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue'),
-    },
-  ],
-});
+    routes
+})

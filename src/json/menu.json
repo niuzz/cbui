@@ -1,0 +1,286 @@
+{
+    "指南": [
+      {
+        "name": "guide",
+        "path": "/guide",
+        "title": "介绍"
+      },
+      {
+        "name": "install",
+        "path": "/install",
+        "title": "快速上手"
+      },
+      {
+        "name": "standard",
+        "path": "/standard",
+        "title": "组件开发规范"
+      },
+      {
+        "name": "update",
+        "path": "/update",
+        "title": "更新日志"
+      },
+      {
+        "path": "/",
+        "redirect": "/guide"
+      },
+      {
+        "path": "*",
+        "redirect": "/guide"
+      }
+    ],
+    "基础组件": [
+      {
+        "title": "基础",
+        "path": "/",
+        "items": [
+          {
+            "title": "CheckBox 多选框",
+            "path": "/checkbox",
+            "name": "checkbox"
+          },
+          {
+            "title": "Color 色彩",
+            "path": "/color",
+            "name": "color"
+          },
+          {
+            "title": "Icon 图标",
+            "path": "/icon",
+            "name": "icon"
+          },
+          {
+            "title": "Input 输入框",
+            "path": "/input",
+            "name": "input"
+          },
+          {
+            "title": "InputNumber 数字输入框",
+            "path": "/inputNumber",
+            "name": "inputNumber"
+          },
+          {
+            "title": "Button 按钮",
+            "path": "/button",
+            "name": "button"
+          },
+          {
+            "title": "Tag 标签",
+            "path": "/tag",
+            "name": "tag"
+          },
+          {
+            "title": "Switch 开关",
+            "path": "/switch",
+            "name": "switch"
+          },
+          {
+            "title": "Drawer 抽屉",
+            "path": "/drawer",
+            "name": "drawer"
+          },
+          {
+            "title": "Message 消息",
+            "path": "/message",
+            "name": "message"
+          },
+          {
+            "title": "Steps 步骤条",
+            "path": "/steps",
+            "name": "steps"
+          },
+          {
+            "title": "Upload 上传",
+            "path": "/upload",
+            "name": "upload"
+          },
+          {
+            "title": "Dropdown下拉",
+            "path": "/dropdown",
+            "name": "dropdown"
+          },
+          {
+            "title": "Radio单选框",
+            "path": "/radio",
+            "name": "radio"
+          },
+          {
+            "title": "Progress 进度条",
+            "path": "/progress",
+            "name": "progress"
+          },
+          {
+            "title": "Select 选择器",
+            "path": "/select",
+            "name": "select"
+          },
+          {
+            "title": "DatePicker 日期选择器",
+            "path": "/datepicker",
+            "name": "datepicker"
+          },
+          {
+            "title": "TimePicker 时间选择器",
+            "path": "/timepicker",
+            "name": "timepicker"
+          },
+          {
+            "title": "DateTimePicker选择器",
+            "path": "/datetimepicker",
+            "name": "datetimepicker"
+          }
+        ]
+      },
+      {
+        "title": "布局",
+        "path": "/",
+        "items": [
+          {
+            "title": "Card 卡片",
+            "path": "/card",
+            "name": "card"
+          },
+          {
+            "title": "Collapse 折叠面板",
+            "path": "/collapse",
+            "name": "collapse"
+          },
+          {
+            "title": "Grid 栅格",
+            "path": "/grid",
+            "name": "grid"
+          },
+          {
+            "title": "Split 面板分割",
+            "path": "/split",
+            "name": "split"
+          }
+        ]
+      },
+      {
+        "title": "视图",
+        "path": "/",
+        "items": [
+          {
+            "title": "Table 表格",
+            "path": "/table",
+            "name": "table"
+          },
+          {
+            "title": "Page 分页",
+            "path": "/page",
+            "name": "page"
+          },
+          {
+            "title": "Tree 树形控件",
+            "path": "/tree",
+            "name": "tree"
+          },
+          {
+            "title": "Notice 通知",
+            "path": "/notice",
+            "name": "notice"
+          },
+          {
+            "title": "Modal 对话框",
+            "path": "/modal",
+            "name": "modal"
+          },
+          {
+            "title": "Tooltip 文字提示",
+            "path": "/tooltip",
+            "name": "tooltip"
+          },
+          {
+            "title": "Tabs 标签页",
+            "path": "/tabs",
+            "name": "tabs"
+          }
+        ]
+      },
+      {
+        "title": "导航",
+        "path": "/",
+        "items": [
+          {
+            "title": "Breadcrumb 面包屑",
+            "path": "/breadcrumb",
+            "name": "breadcrumb"
+          },
+          {
+            "title": "Steps 步骤条",
+            "path": "/steps",
+            "name": "steps"
+          },
+          {
+            "title": "Menu 导航菜单",
+            "path": "/menu",
+            "name": "menu"
+          }
+        ]
+      },
+      {
+        "title": "表单",
+        "path": "/",
+        "items": [
+          {
+            "title": "Form 表单",
+            "path": "/form",
+            "name": "form"
+          }
+        ]
+      },
+      {
+        "title": "其他",
+        "path": "/",
+        "items": [
+          {
+            "title": "BackTop 返回顶部",
+            "path": "/backTop",
+            "name": "backTop"
+          },
+          {
+            "title": "Carousel 走马灯",
+            "path": "/carousel",
+            "name": "carousel"
+          },
+          {
+            "title": "Circle 进度环",
+            "path": "/circle",
+            "name": "circle"
+          },
+          {
+            "title": "Transfer 穿梭框",
+            "path": "/transfer",
+            "name": "transfer"
+          },
+          {
+            "title": "Timeline 时间轴",
+            "path": "/timeline",
+            "name": "timeline"
+          },
+          {
+            "title": "Loading 加载动画",
+            "path": "/loading",
+            "name": "loading"
+          },
+          {
+            "title": "LoadingBar 进度条",
+            "path": "/loadingbar",
+            "name": "loadingbar"
+          },
+          {
+            "title": "Anchor 锚点",
+            "path": "/anchor",
+            "name": "anchor"
+          },
+          {
+            "title": "Affix 图钉",
+            "path": "/affix",
+            "name": "affix"
+          }
+        ]
+      }
+    ]
+  }
+  

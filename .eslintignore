@@ -1,0 +1,10 @@
+/build/
+/config/
+/dist/
+/*.js
+/test/unit/coverage/
+/src/documents/
+/businessLibs/
+/src/assets/
+/node_modules/
+/libs/node_modules/
