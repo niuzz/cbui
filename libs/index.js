@@ -1,8 +1,10 @@
 import Button from './components/button'
 import Anchor from './components/anchor'
+import Icon from './components/icon'
 const components = [
     Button,
-    Anchor
+    Anchor,
+    Icon
 ]
 
 const install = function (Vue) {
