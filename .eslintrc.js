@@ -200,6 +200,7 @@ module.exports = {
     '@vue/standard'
   ],
   rules: {
+    semi: ["error", "always"], //强行加分号
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     // allow async-await
