@@ -22,7 +22,7 @@
 - ES6
     - [ES6标准入门](http://es6.ruanyifeng.com/)
     - 《看透JavaScript：原理、方法与实践》
-    - 《JavaScript忍者秘籍》第二版
+    - 《JavaScript忍者秘籍》第二版!
 
 - NodeJS
 	- Node入门一本全面地Node.js教程
