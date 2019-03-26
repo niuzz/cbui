@@ -1,10 +1,12 @@
 import Button from './components/button'
+import CheckBox from './components/checkbox'
 import Anchor from './components/anchor'
 import Icon from './components/icon'
 const components = [
     Button,
     Anchor,
-    Icon
+    Icon,
+    CheckBox
 ]
 
 const install = function (Vue) {
