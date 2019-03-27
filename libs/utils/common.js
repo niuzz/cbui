@@ -1,11 +1,13 @@
-const prefix = 'n-'
-export {prefix}
+const prefix = 'n-';
+export {
+    prefix
+};
 
 export function oneOf (value, validList) {
     for (let i = 0; i < validList.length; i++) {
         if (value === validList[i]) {
-            return true
+            return true;
         }
     }
-    return false
+    return false;
 }

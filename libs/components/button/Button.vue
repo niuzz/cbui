@@ -15,19 +15,18 @@
 </template>
 
 <script>
-/* eslint-disable */
-import { prefix, oneOf } from "../../utils/common";
-import Icon from "../icon";
+import { prefix, oneOf } from '../../utils/common';
+import Icon from '../icon';
 
-const prefixCls = prefix + "button";
+const prefixCls = prefix + 'button';
 export default {
   name: prefixCls,
   components: { Icon },
   computed: {
-    iconcls() {
+    iconcls () {
       return `${this.icon}`;
     },
-    bodyCls() {
+    bodyCls () {
       return [
         `${prefixCls}`,
         `${prefixCls}-size-${this.size}`,
@@ -46,22 +45,22 @@ export default {
       default: false
     },
     size: {
-      validator(value) {
-        return oneOf(value, ["default", "small", "large"]);
+      validator (value) {
+        return oneOf(value, ['default', 'small', 'large']);
       },
-      default: "default"
+      default: 'default'
     },
     type: {
-      validator(value) {
+      validator (value) {
         return oneOf(value, [
-          "default",
-          "primary",
-          "error",
-          "warning",
-          "success"
+          'default',
+          'primary',
+          'error',
+          'warning',
+          'success'
         ]);
       },
-      default: "default"
+      default: 'default'
     },
     round: {
       type: Boolean,
@@ -81,25 +80,25 @@ export default {
     },
     icon: {
       type: String,
-      default: ""
+      default: ''
     },
     customClasses: {
       type: [String, Array],
-      default: ""
+      default: ''
     }
   },
-  data() {
+  data () {
     return {};
   },
-  mounted() {
+  mounted () {
     // 是否需要不可点击？
     if (this.loading) {
       // this.disabled = true
     }
   },
   methods: {
-    handleClick(e) {
-      this.$emit("on-click", e);
+    handleClick (e) {
+      this.$emit('on-click', e);
     }
   }
 };

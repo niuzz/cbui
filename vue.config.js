@@ -11,7 +11,7 @@ function resolve(dir) {
 }
 
 function wrapCustomClass(render) {
-  return function(...args) {
+  return function (...args) {
     return render(...args)
       .replace('<code class="', '<code class="hljs ')
       .replace("<code>", '<code class="hljs">');
@@ -42,12 +42,12 @@ module.exports = {
       .options({
         raw: true,
         preprocess: (MarkdownIt, source) => {
-          MarkdownIt.renderer.rules.table_open = function() {
+          MarkdownIt.renderer.rules.table_open = function () {
             return '<table class="table">';
           };
           MarkdownIt.renderer.rules.fence = wrapCustomClass(MarkdownIt.renderer.rules.fence);
           const code_inline = MarkdownIt.renderer.rules.code_inline;
-          MarkdownIt.renderer.rules.code_inline = function(...args) {
+          MarkdownIt.renderer.rules.code_inline = function (...args) {
             args[0][args[1]].attrJoin("class", "code-show");
             return code_inline(...args);
           };
@@ -60,7 +60,7 @@ module.exports = {
             {
               validate: params => params.trim().match(/^code\s*(.*)$/),
               // 使用code-show 组件包裹内容并渲染
-              render: function(tokens, idx) {
+              render: function (tokens, idx) {
                 if (tokens[idx].nesting === 1) {
                   return `<code-show>
                                     <div slot="highlight">`;
