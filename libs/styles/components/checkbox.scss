@@ -1,2 +1,37 @@
-$css-prefix-button: $css-prefix+'checkbox';
+$css-prefix-checkbox: $css-prefix+'checkbox';
 $css-prefix-checkbox-wrapper: $css-prefix+'checkbox-wrapper';
+
+.#{$css-prefix-checkbox-wrapper}{
+  display: block;
+  padding: 10px;
+  border: 1px solid red;
+  margin-right: 15px;
+    &-checked {
+        color: $LightPrimary
+    }
+    &-disabled {
+        color: $Disabled;
+        cursor: not-allowed;
+    }
+}
+.#{$css-prefix-checkbox}{
+  font-size: 14px;
+  &-inner{
+    width: 15px;
+    height: 15px;
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  &-input{
+    opacity: 0;
+    outline: none;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+  }
+}

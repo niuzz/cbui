@@ -6,19 +6,10 @@
 <div class="example">
     <div class="example-box">
         <div>
-            <n-checkbox name="1" on-clock="handleClick">多选框</n-checkbox>
+            <n-checkbox></n-checkbox>
         </div>
     </div>
 </div>
-<script>
-    export default {
-        methods: {
-            handleClick(name,value) {
-                alert(name,value)
-            }
-        }
-    }
-</script>
 
 :::code
 ```html

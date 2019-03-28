@@ -1,98 +1,82 @@
-
 <template>
-  <input type="checkbox" @click="handleClick" value="dianj" name="name">
+  <label :class="wrapClasses">
+    <span :class="checkboxClasses">
+      <span :class="innerClasses"></span>
+      <input
+        type="checkbox"
+        :class="inputClasses"
+        :disabled="disabled"
+        :checked="currentValue"
+        :name="groupName"
+        @change="change"
+        aria-hidden="true"
+      >
+    </span>
+    <span>
+      <!-- <slot>{{ label }}</slot> -->
+    </span>
+  </label>
 </template>
-
 <script>
-/* eslint-disable */
-import { prefix, oneOf } from "../../utils/common";
-import Icon from "../icon";
+import { prefix } from '../../utils/common';
+import { findComponentUpward } from '../../utils/assist';
 
-const prefixCls = prefix + "checkbox";
+const prefixCls = prefix + 'checkbox';
+
 export default {
   name: prefixCls,
-  components: { Icon },
-  computed: {
-    iconcls() {
-      return `${this.icon}`;
-    },
-    bodyCls() {
-      return [
-        `${prefixCls}`,
-        `${prefixCls}-size-${this.size}`,
-        `${prefixCls}-type-${this.type} `,
-        {
-          [`${prefixCls}-round`]: this.round, // 圆角
-          [`${prefixCls}-circle`]: this.circle, // 圆形
-          [`${prefixCls}-disabled`]: this.disabled // 禁用
-        }
-      ];
-    }
-  },
   props: {
+    value: {
+      type: [String, Number, Boolean],
+      default: false
+    },
+    label: {
+      type: [String, Number, Boolean]
+    },
     disabled: {
       type: Boolean,
       default: false
     },
-    size: {
-      validator(value) {
-        return oneOf(value, ["default", "small", "large"]);
-      },
-      default: "default"
-    },
-    type: {
-      validator(value) {
-        return oneOf(value, [
-          "default",
-          "primary",
-          "error",
-          "warning",
-          "success"
-        ]);
-      },
-      default: "default"
-    },
-    round: {
-      type: Boolean,
-      default: false
-    },
-    plain: {
-      type: Boolean,
-      default: false
-    },
-    loading: {
-      type: Boolean,
-      default: false
-    },
-    circle: {
-      type: Boolean,
-      default: false
-    },
-    icon: {
-      type: String,
-      default: ""
-    },
-    customClasses: {
-      type: [String, Array],
-      default: ""
+    name: {
+      type: String
     }
   },
-  data() {
+  data () {
     return {
-      name: "",
-      value: ""
+      currentValue: this.value,
+      group: false,
+      groupName: this.name,
+      parent: findComponentUpward(this, 'RadioGroup')
     };
   },
-  mounted() {
-    // 是否需要不可点击？
-    if (this.loading) {
-      // this.disabled = true
+  computed: {
+    wrapClasses () {
+      return [
+        `${prefixCls}-wrapper`,
+        {
+          [`${prefixCls}-group-item`]: this.group,
+          [`${prefixCls}-wrapper-checked`]: this.currentValue,
+          [`${prefixCls}-wrapper-disabled`]: this.disabled
+        }
+      ];
+    },
+    checkboxClasses () {
+      return [
+        `${prefixCls}`,
+        {
+          [`${prefixCls}-checked`]: this.currentValue,
+          [`${prefixCls}-disabled`]: this.disabled
+        }
+      ];
+    },
+    innerClasses () {
+      return [`${prefixCls}-inner`];
+    },
+    inputClasses () {
+      return `${prefixCls}-input`;
     }
   },
-  methods: {
-    handleClick() {
-      this.$emit("on-click", name, value);
-    }
-  }
+  mounted () {},
+  methods: {}
 };
 </script>
