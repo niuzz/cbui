@@ -1,0 +1,48 @@
+.clearfloat:after{display:block;clear:both;content:"";visibility:hidden;height:0}
+.clearfloat{zoom:1}
+.colorbox{
+  color: #fff;
+  text-indent: 2em;
+  margin-bottom: 20px;
+  .text_p1{
+    padding-top: 20px;
+    display: block;
+  }
+  .text_p2{
+    padding-top: 5px;
+    display: block;
+    opacity: 0.6;
+  }
+  .big{
+    width: 400px;
+    border-radius: 8px;
+    height: 80px;
+  }
+  .small{
+    width: 180px;
+    height: 80px;
+    border-radius: 8px;
+    float: left;
+    margin-right: 10px;
+    border: 1px solid #dddee1;
+  }
+  .fontback{color: #000;}
+  .primary{@include _background($Primary);}
+  .info{@include _background($Info);}
+  .success{@include _background($Success);}
+  .warning{@include _background($Warning);}
+  .error{@include _background($Error);}
+  .badge{@include _background($Badge);}
+  .background{@include _background($Background);}
+  .sub{@include _background($Sub);}
+  .disabled{@include _background($Disabled);}
+  .border{@include _background($Border);}
+  .divider{@include _background($Divider);}
+  .title{@include _background($Title);}
+  .content{@include _background($Content);}
+  .subContent{@include _background($SubContent);}
+  .disContent{@include _background($DisContent);}
+  .linkContent{@include _background($LinkContent);}
+  .black{background: #000000;}
+  .white{background: #FFFFFF}
+}

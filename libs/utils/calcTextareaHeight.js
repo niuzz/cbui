@@ -34,8 +34,8 @@ let hiddenTextarea;
 function calculateNodeStyling (node, useCache = false) {
     const nodeRef = (
         node.getAttribute('id') ||
-    node.getAttribute('data-reactid') ||
-    node.getAttribute('name'));
+        node.getAttribute('data-reactid') ||
+        node.getAttribute('name'));
 
     if (useCache && computedStyleCache[nodeRef]) {
         return computedStyleCache[nodeRef];
@@ -45,18 +45,18 @@ function calculateNodeStyling (node, useCache = false) {
 
     const boxSizing = (
         style.getPropertyValue('box-sizing') ||
-    style.getPropertyValue('-moz-box-sizing') ||
-    style.getPropertyValue('-webkit-box-sizing')
+        style.getPropertyValue('-moz-box-sizing') ||
+        style.getPropertyValue('-webkit-box-sizing')
     );
 
     const paddingSize = (
         parseFloat(style.getPropertyValue('padding-bottom')) +
-    parseFloat(style.getPropertyValue('padding-top'))
+        parseFloat(style.getPropertyValue('padding-top'))
     );
 
     const borderSize = (
         parseFloat(style.getPropertyValue('border-bottom-width')) +
-    parseFloat(style.getPropertyValue('border-top-width'))
+        parseFloat(style.getPropertyValue('border-top-width'))
     );
 
     const sizingStyle = SIZING_STYLE
@@ -113,15 +113,15 @@ false) {
     let overflowY;
 
     if (boxSizing === 'border-box') {
-    // border-box: add border, since height = content + padding + border
+        // border-box: add border, since height = content + padding + border
         height = height + borderSize;
     } else if (boxSizing === 'content-box') {
-    // remove padding, since height = content
+        // remove padding, since height = content
         height = height - paddingSize;
     }
 
     if (minRows !== null || maxRows !== null) {
-    // measure height of a textarea with a single row
+        // measure height of a textarea with a single row
         hiddenTextarea.value = ' ';
         let singleRowHeight = hiddenTextarea.scrollHeight - paddingSize;
         if (minRows !== null) {
