@@ -1,0 +1,71 @@
+$css-prefix-input-number: $css-prefix+'input-number';
+$css-prefix-input-number-disabled: $css-prefix+'input-number-disabled';
+
+.#{$css-prefix-input-number} {
+
+    display: inline-block;
+    border: 1px solid $Border;
+    border-radius: 6px;
+    height: 38px;
+    line-height: 35px;
+    cursor: pointer;
+    overflow: hidden;
+
+    &-down,
+    &-up {
+        height: 100%;
+        width: 38px;
+        display: inline-block;
+        text-align: center;
+        font-size: 16px;
+        background-color: #f5f7fa;
+        vertical-align: middle;
+    }
+
+    &-small {
+        height: 34px;
+        line-height: 32px;
+    }
+
+    &-large {
+        height: 42px;
+        line-height: 40px;
+    }
+
+
+    &-center {
+        vertical-align: middle;
+        width: 100px;
+        display: inline-block;
+        height: 100%;
+        border-left: 1px solid $Border;
+        border-right: 1px solid $Border;
+
+        input {
+            border: none;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+        }
+    }
+
+
+}
+
+.#{$css-prefix-input-number-disabled} {
+    .#{$css-prefix-input-number} {
+        cursor: not-allowed;
+
+        &-down,
+        &-up {
+            cursor: not-allowed;
+            background-color: $Disabled;
+        }
+
+        &-center {
+            input {
+                background-color: $Disabled;
+            }
+        }
+    }
+}
