@@ -4,6 +4,9 @@ import CheckBox from './components/checkbox';
 import Radio from './components/radio';
 import Icon from './components/icon';
 import Input from './components/input';
+
+import InputNumber from './components/inputNumber';
+
 import Color from './components/color';
 const components = [
     Button,
@@ -11,6 +14,7 @@ const components = [
     Radio,
     Icon,
     Input,
+    InputNumber,
     Color,
     CheckBox
 ];
