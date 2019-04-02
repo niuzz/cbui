@@ -10,11 +10,6 @@
                 :disabled="disabled"
                 @change="change"/>
         </span>
-        <!--<span :class="prefixCls + '-right'" :style="contentSty">-->
-        <!--<slot>-->
-        <!--<span v-if="!showSlot">{{label}}</span>-->
-        <!--</slot>-->
-        <!--</span>-->
         <slot>{{label}}</slot>
     </label>
 </template>
