@@ -1,0 +1,66 @@
+$css-prefix-form-item: $css-prefix + 'form-item';
+$css-prefix-form: $css-prefix + 'form';
+.#{$css-prefix-form} {
+  .#{$css-prefix-form-item}-label {
+    float: left;
+    font-size: 12px;
+    line-height: 1;
+    @include _color(#495060);
+    box-sizing: border-box;
+    padding: 10px 12px 10px 0;
+    text-align: right;
+  }
+  &-label-left .#{$css-prefix-form-item}-label {
+    text-align: left;
+  }
+  &-label-top .#{$css-prefix-form-item}-label {
+    float: none;
+    display: inline-block;
+    padding: 0 0 10px 0;
+  }
+  &-inline  .#{$css-prefix-form-item}{
+      display: inline-block;
+      margin-right: 10px;
+  }
+}
+.#{$css-prefix-form-item} {
+  margin-bottom: 24px;
+  zoom: 1;
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+    visibility: hidden;
+    font-size: 0;
+    height: 0;
+  }
+
+  &-content {
+    position: relative;
+    font-size: 12px;
+    line-height: 32px;
+  }
+
+  &-error-tip {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    line-height: 1;
+    padding-top: 6px;
+    @include _color($Error);
+  }
+  &-required {
+    .#{$css-prefix-form-item}-label:before {
+      content: '*';
+      display: inline-block;
+      margin-right: 4px;
+      font-size: 12px;
+      line-height: 12px;
+      @include _color($Error);
+      font-family: SimSun;
+    }
+  }
+}

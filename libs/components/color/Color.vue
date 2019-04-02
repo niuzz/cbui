@@ -23,7 +23,7 @@ export default {
       return [
         `${prefixCls}`,
         {
-          [`bw-${this.type}`]: this.type !== ''
+          [`n-${this.type}`]: this.type !== ''
         }
       ];
     },

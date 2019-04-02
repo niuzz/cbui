@@ -1,82 +1,99 @@
 <template>
-  <label :class="wrapClasses">
-    <span :class="checkboxClasses">
-      <span :class="innerClasses"></span>
-      <input
-        type="checkbox"
-        :class="inputClasses"
-        :disabled="disabled"
-        :checked="currentValue"
-        :name="groupName"
-        @change="change"
-        aria-hidden="true"
-      >
-    </span>
-    <span>
-      <!-- <slot>{{ label }}</slot> -->
-    </span>
-  </label>
+    <label :class="warpCls">
+        <span :class="checkbboxLeftClass">
+            <span :class="innerCls"></span>
+            <input
+                :class="prefixCls + '-input'"
+                type="checkbox"
+                :value="value"
+                :checked="checked"
+                :disabled="disabled"
+                @change="change"/>
+        </span>
+        <!--<span :class="prefixCls + '-right'" :style="contentSty">-->
+        <!--<slot>-->
+        <!--<span v-if="!showSlot">{{label}}</span>-->
+        <!--</slot>-->
+        <!--</span>-->
+        <slot>{{label}}</slot>
+    </label>
 </template>
+
 <script>
 import { prefix } from '../../utils/common';
-import { findComponentUpward } from '../../utils/assist';
+import Emitter from '../../mixins/emitter';
 
 const prefixCls = prefix + 'checkbox';
-
 export default {
-  name: prefixCls,
-  props: {
-    value: {
-      type: [String, Number, Boolean],
-      default: false
+    name: prefixCls,
+    mixins: [Emitter],
+    data () {
+        return {
+            checked: this.value,
+            showSlot: true,
+            prefixCls
+        };
     },
-    label: {
-      type: [String, Number, Boolean]
-    },
-    disabled: {
-      type: Boolean,
-      default: false
-    },
-    name: {
-      type: String
-    }
-  },
-  data () {
-    return {
-      currentValue: this.value,
-      group: false,
-      groupName: this.name,
-      parent: findComponentUpward(this, 'RadioGroup')
-    };
-  },
-  computed: {
-    wrapClasses () {
-      return [
-        `${prefixCls}-wrapper`,
-        {
-          [`${prefixCls}-group-item`]: this.group,
-          [`${prefixCls}-wrapper-checked`]: this.currentValue,
-          [`${prefixCls}-wrapper-disabled`]: this.disabled
+    props: {
+        value: {
+            type: Boolean,
+            default: false
+        },
+        disabled: {
+            type: Boolean,
+            default: false
+        },
+        label: {
+            type: String,
+            default: ''
+        },
+        indeterminate: {
+            type: Boolean,
+            default: false
         }
-      ];
     },
-    checkboxClasses () {
-      return [
-        `${prefixCls}`,
-        {
-          [`${prefixCls}-checked`]: this.currentValue,
-          [`${prefixCls}-disabled`]: this.disabled
+    watch: {
+        value (checked) {
+            this.checked = checked;
         }
-      ];
     },
-    innerClasses () {
-      return [`${prefixCls}-inner`];
+    computed: {
+        checkbboxLeftClass () {
+            return [
+                `${prefixCls}`,
+                {
+                    [`${prefixCls}-checked`]: this.checked,
+                    [`${prefixCls}-disabled`]: this.disabled,
+                    [`${prefixCls}-indeterminate`]: this.indeterminate
+                }
+            ];
+        },
+        innerCls () {
+            return [
+                `${prefixCls}-inner`
+            ];
+        },
+        warpCls () {
+            return [
+                `${prefixCls}-warpper`
+            ];
+        }
     },
-    inputClasses () {
-      return `${prefixCls}-input`;
+    mounted () {
+        this.showSlot = this.$slots.default !== undefined;
+    },
+    methods: {
+        change (e) {
+            if (this.disabled) return;
+            this.checked = e.target.checked;
+            if (this.$parent.$options.name === prefix + 'checkboxGroup') {
+                this.$parent.change(this.label, this.checked);
+                return;
+            }
+            this.$emit('input', this.checked);
+            this.$emit('on-change', this.checked);
+            this.dispatch(prefix + 'form-item', 'on-form-change', this.checked);
+        }
     }
-  },
-  mounted () {},
-  methods: {}
 };
 </script>

@@ -1,9 +1,11 @@
 import Button from './components/button';
 import Anchor from './components/anchor';
 import CheckBox from './components/checkbox';
+import CheckboxGroup from './components/checkboxGroup';
 import Radio from './components/radio';
 import Icon from './components/icon';
 import Input from './components/input';
+import Form from './components/form';
 
 import InputNumber from './components/inputNumber';
 
@@ -16,7 +18,10 @@ const components = [
     Input,
     InputNumber,
     Color,
-    CheckBox
+    CheckBox,
+    CheckboxGroup,
+    Form,
+    Form.FormItem
 ];
 
 const install = function (Vue) {
