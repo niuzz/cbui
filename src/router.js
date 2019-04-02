@@ -1,26 +1,26 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import menuList from './json/menu.json'
+import Vue from 'vue';
+import Router from 'vue-router';
+import menuList from './json/menu.json';
 
-Vue.use(Router)
+Vue.use(Router);
 
-let routes = []
+let routes = [];
 
 Object.keys(menuList).forEach((item) => {
-    routes = routes.concat(menuList[item])
-})
+    routes = routes.concat(menuList[item]);
+});
 const addRoute = (router) => {
     router.forEach((route) => {
         if (route.items) {
-            addRoute(route.items)
-            routes = routes.concat(route.items)
+            addRoute(route.items);
+            routes = routes.concat(route.items);
         } else {
             route.component = r => require.ensure([], () =>
-                r(require(`./documents/basicDocuments/${route.name}.md`)))
+                r(require(`./documents/basicDocuments/${route.name}.md`)));
         }
-    })
-}
-addRoute(routes)
+    });
+};
+addRoute(routes);
 export default new Router({
     routes
-})
+});

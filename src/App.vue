@@ -3,16 +3,15 @@
     <main-header></main-header>
     <div class="content clearfix" ref="content">
       <menu-nav class="nav"></menu-nav>
-      <div class="nav-right" v-if="anchors.length">
-      </div>
+      <div class="nav-right" v-if="anchors.length"></div>
       <router-view class="doc"/>
     </div>
   </div>
 </template>
 
 <script>
-import mainHeader from './components/Header'
-import menuNav from './components/Nav'
+import mainHeader from './components/Header';
+import menuNav from './components/Nav';
 
 export default {
   name: 'App',
@@ -23,7 +22,7 @@ export default {
   data () {
     return {
       anchors: []
-    }
+    };
   },
   watch: {
     '$route.path' () {
@@ -31,15 +30,15 @@ export default {
         // 兼容 IE11 浏览器，将 NodeList 类似数组转成数组
         let h3s = Array.prototype.slice.call(
           this.$refs.content.querySelectorAll('h3')
-        )
-        this.anchors = h3s
+        );
+        this.anchors = h3s;
         h3s.forEach((el, index) => {
-          el.id = `title${index}`
-        })
-      })
+          el.id = `title${index}`;
+        });
+      });
     }
   }
-}
+};
 </script>
 
 <style lang="scss">

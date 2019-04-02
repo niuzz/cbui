@@ -100,14 +100,14 @@ export function firstUpperCase (str) {
 
 export function scrollTop (el, from = 0, to, duration = 500, endCallback) {
     if (!window.requestAnimationFrame) {
-    // window.requestAnimationFrame = (
-    //     window.webkitRequestAnimationFrame ||
-    //     window.mozRequestAnimationFrame ||
-    //     window.msRequestAnimationFrame ||
-    //     function (callback) {
-    //         return window.setTimeout(callback, 1000 / 60)
-    //     }
-    // )
+        // window.requestAnimationFrame = (
+        //     window.webkitRequestAnimationFrame ||
+        //     window.mozRequestAnimationFrame ||
+        //     window.msRequestAnimationFrame ||
+        //     function (callback) {
+        //         return window.setTimeout(callback, 1000 / 60)
+        //     }
+        // )
         window.requestAnimationFrame = window.requestAnimationFrame || function (fn) {
             return setTimeout(fn, 1000 / 60);
         };
