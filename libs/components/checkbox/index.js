@@ -1,3 +1,3 @@
-import Checkbox from './Checkbox.vue';
+import Checkbox from './CheckBox.vue';
 
 export default Checkbox;
