@@ -3,13 +3,6 @@
 ---
 `cbUi`是星拥月前端组[Jason (壮志)](https://github.com/niuzz) / [程鹏](https://github.com/Eureka6199) / [海玲](https://github.com/0812zhanghailing) 开发的一套为开发者、设计师和产品经理快速构建项目和原型，基于 [Vue 2.0](https://cn.vuejs.org/v2/api/) 的桌面端组件库
 
-### 项目截图
-<img src="https://storage-static.oss-cn-beijing.aliyuncs.com/public/20190403092358.png"></img>
-
----
-
-<img src="https://storage-static.oss-cn-beijing.aliyuncs.com/public/20190403092427.png"></img>
-
 ### 目标
 - 模块化组件
 - 吸取大厂经验
